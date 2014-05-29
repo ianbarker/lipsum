@@ -30,11 +30,11 @@
 
             <tr>
                 <th>Quantity</th>
-                <td><input type="number" name="qty" value="9"></td>
+                <td><input type="number" name="qty" value="9" style="width: 3em;"></td>
             </tr>
 
             <tr>
-                <th>Images</th>
+                <th>Images theme</th>
                 <td>
                     <select name="image_type">
                         <option value="">Random</option>
@@ -54,6 +54,13 @@
                     </select>
 
                     <p class="description">This uses lorempixel.com to get random images.</p>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Image size</th>
+                <td>
+                    <input type="number" name="image_width" value="<?= LoremPixel::getWidth() ?>" style="width:4em;">x<input type="number" name="image_height" value="<?= LoremPixel::getHeight() ?>" style="width:4em;">
                 </td>
             </tr>
 

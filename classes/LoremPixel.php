@@ -25,9 +25,22 @@ class LoremPixel {
 
     }
 
-    public function getImage($type = '') {
+    public static function getWidth() {
 
-        $url = 'http://lorempixel.com/' . self::$width . '/' . self::$height . (!empty($type) ? '/' . $type : '');
+        return self::$width;
+    }
+
+    public static function getHeight() {
+
+        return self::$height;
+    }
+
+    public function getImage($type = '', $width, $height) {
+
+        $width = intval($width) > 0 ? $width : self::$width;
+        $height = intval($height) > 0 ? $height : self::$height;
+
+        $url = 'http://lorempixel.com/' . $width . '/' . $height . (!empty($type) ? '/' . $type : '');
 
         return file_get_contents($url);
 

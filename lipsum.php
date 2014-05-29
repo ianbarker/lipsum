@@ -26,6 +26,8 @@ add_action('admin_menu', function () {
             $post_type = $_POST['post_flavour'];
             $quantity = (int) $_POST['qty'];
             $image_type = $_POST['image_type'];
+            $image_width = $_POST['image_width'];
+            $image_height = $_POST['image_height'];
 
             $posts_created = 0;
 
@@ -50,7 +52,7 @@ add_action('admin_menu', function () {
 
                     if ($post_id !== 0) {
 
-                        $image_data = LoremPixel::getInstance()->getImage($image_type);
+                        $image_data = LoremPixel::getInstance()->getImage($image_type, $image_width, $image_height);
                         if ($image_data) {
                             $img = imagecreatefromstring($image_data);
 
