@@ -29,7 +29,11 @@ class BaconIpsum {
 
         $raw = file_get_contents('http://baconipsum.com/api/?type=meat-and-filler&paras=' . $paragraphs);
 
+        // remove \r
+        $raw = str_replace('\r','',$raw);
+
         $data = json_decode($raw);
+
 
         return $data;
 

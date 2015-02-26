@@ -38,7 +38,7 @@ add_action('admin_menu', function () {
                     $title = BaconIpsum::getInstance()->getCopy(1);
                     $title = wp_trim_words(substr($title[0], 0, strpos($title[0], '.')), 12, '');
 
-                    $content = implode("\n", BaconIpsum::getInstance()->getCopy(rand(5, 10)));
+                    $content = implode("\n\n", BaconIpsum::getInstance()->getCopy(rand(5, 10)));
 
                     $post = array(
                         'post_title'   => $title,
